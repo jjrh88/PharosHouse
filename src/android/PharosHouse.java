@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+
 import mabel_tech.com.scanovate_demo.ScanovateHandler;
 import mabel_tech.com.scanovate_demo.ScanovateSdk;
 import mabel_tech.com.scanovate_demo.model.CloseResponse;
@@ -19,9 +21,11 @@ import okhttp3.ResponseBody;
  */
 public class PharosHouse extends CordovaPlugin {
 
+    Context contect;
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("add")) {
+        if (action.equals("capturar")) {
             this.capturar(args, callbackContext);
             return true;
         }
@@ -72,5 +76,33 @@ public class PharosHouse extends CordovaPlugin {
         } else {
             callbackContext.error("Please donot plass null value");
         }
+    }
+
+    private void evaluateTransaction(String transactionId) {
+
+        RetrofitClient retrofitClient = new RetrofitClient();
+        retrofitClient.validateTransaction("credibancoqa", transactionId, new ApiHelper.ValidateTransactionHandler() {
+            @Override
+            public void onSuccess(String stateName) {
+                progress.dismiss();
+                alert("Resultado de Transacción: " + stateName);
+            }
+
+            @Override
+            public void onSuccess(int i, ResponseBody responseBody) {
+                String algo = "";
+
+            }
+
+            @Override
+            public void onConnectionFailed() {
+                String algo = "";
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                //evaluateTransaction(transactionId, contect);
+            }
+        }, contect);
     }
 }
