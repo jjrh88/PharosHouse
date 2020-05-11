@@ -1,0 +1,24 @@
+{
+  "name": "pharoshouse",
+  "version": "1.1.0",
+  "description": "Integración skd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjrh88/PharosHouse.git"
+  },
+  "keywords": [
+    "reconocimiento",
+    "de",
+    "cedulas"
+  ],
+  "author": "PharosHouse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjrh88/PharosHouse/issues"
+  },
+  "homepage": "https://github.com/jjrh88/PharosHouse#readme"
+}

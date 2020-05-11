@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-pharosHouse" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PharosHouse</name>
+    <js-module name="PharosHouse" src="www/PharosHouse.js">
+        <clobbers target="cordova.plugins.PharosHouse" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PharosHouse">
+                <param name="android-package" value="cordova.plugin.pharoshouse.PharosHouse" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/PharosHouse.java" target-dir="src/cordova-plugin-mathcalculator/PharosHouse" />
+    </platform>
+</plugin>
