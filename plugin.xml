@@ -9,10 +9,34 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="PharosHouse">
-                <param name="android-package" value="cordova.plugin.pharoshouse.PharosHouse" />
+                <param name="android-package" value="com.cordova.plugin.pharoshouse" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="src/android/PharosHouse.java" target-dir="src/cordova-plugin-pharosHouse/PharosHouse" />
-    </platform>
+
+    
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.CAMERA"/>
+        <uses-permission android:name="android.permission.FLASHLIGHT"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-feature android:name="android.hardware.camera.autofocus" />
+        <uses-permission android:name="android.permission.VIBRATE" />
+        <uses-feature android:glEsVersion="0x00020000" />
+        <uses-feature android:name="android.hardware.camera" android:required="true"/>
+        </config-file>
+
+        <framework src="src/android/pharoshouse.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="src/android/acuantMobileSDK.aar" target="libs/acuantMobileSDK.aar"/>
+        <resource-file src="src/android/kyc.aar" target="libs/kyc.aar"/>
+        <resource-file src="src/android/libScanovateImagingHybridLiveness_4_1_0.aar" target="libs/libScanovateImagingHybridLiveness_4_1_0.aar.aar"/>
+        <resource-file src="src/android/scanovate_colombia.aar" target="libs/scanovate_colombia.aar.aar"/>
+        
+        <dependency id="cordova-plugin-compat" version="^1.0.0"/>
+   </platform>
 </plugin>

@@ -1,13 +1,16 @@
-package cordova.plugin.pharoshouse;
+package com.cordova.plugin.pharoshouse;
 
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CallbackContext;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import mabel_tech.com.scanovate_demo.ScanovateHandler;
 import mabel_tech.com.scanovate_demo.ScanovateSdk;
@@ -16,12 +19,29 @@ import mabel_tech.com.scanovate_demo.network.ApiHelper;
 import mabel_tech.com.scanovate_demo.network.RetrofitClient;
 import okhttp3.ResponseBody;
 
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * This class echoes a string called from JavaScript.
  */
 public class PharosHouse extends CordovaPlugin {
 
+    private ProgressDialog progress;
+
+    Button btn_enrolar;
+    Button btn_verificar;
+    TextView tv;
+    CheckBox checkBox;
     Context contect;
+    EditText numberId;
+    String numberIdentification;
+    Boolean verification;
+
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
