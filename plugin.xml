@@ -13,24 +13,10 @@
             </feature>
         </config-file>
 
-    
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-        <uses-permission android:name="android.permission.CAMERA"/>
-        <uses-permission android:name="android.permission.FLASHLIGHT"/>
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.CAMERA" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-        </config-file>
-
         <framework src="src/android/pharoshouse.gradle" custom="true" type="gradleReference"/>
         <resource-file src="src/android/acuantMobileSDK.aar" target="libs/acuantMobileSDK.aar"/>
         <resource-file src="src/android/kyc.aar" target="libs/kyc.aar"/>
         <resource-file src="src/android/libScanovateImagingHybridLiveness_4_1_0.aar" target="libs/libScanovateImagingHybridLiveness_4_1_0.aar.aar"/>
         <resource-file src="src/android/scanovate_colombia.aar" target="libs/scanovate_colombia.aar.aar"/>
-        
-       
    </platform>
 </plugin>
