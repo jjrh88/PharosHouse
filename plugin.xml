@@ -16,8 +16,8 @@
         <framework src="src/android/pharoshouse.gradle" custom="true" type="gradleReference"/>
         <resource-file src="src/android/acuantMobileSDK.aar" target="libs/acuantMobileSDK.aar"/>
         <resource-file src="src/android/kyc.aar" target="libs/kyc.aar"/>
-        <resource-file src="src/android/libScanovateImagingHybridLiveness_4_1_0.aar" target="libs/libScanovateImagingHybridLiveness_4_1_0.aar.aar"/>
-        <resource-file src="src/android/scanovate_colombia.aar" target="libs/scanovate_colombia.aar.aar"/>
-        
+        <resource-file src="src/android/libScanovateImagingHybridLiveness_4_1_0.aar" target="libs/libScanovateImagingHybridLiveness_4_1_0.aar"/>
+        <resource-file src="src/android/scanovate_colombia.aar" target="libs/scanovate_colombia.aar"/>
+
    </platform>
 </plugin>
