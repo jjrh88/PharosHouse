@@ -18,5 +18,6 @@
         <resource-file src="src/android/kyc.aar" target="libs/kyc.aar"/>
         <resource-file src="src/android/libScanovateImagingHybridLiveness_4_1_0.aar" target="libs/libScanovateImagingHybridLiveness_4_1_0.aar.aar"/>
         <resource-file src="src/android/scanovate_colombia.aar" target="libs/scanovate_colombia.aar.aar"/>
+        
    </platform>
 </plugin>
