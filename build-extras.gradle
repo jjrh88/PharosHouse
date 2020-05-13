@@ -1,0 +1,17 @@
+android {
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 22
+    }
+
+   packagingOptions {
+       exclude 'META-INF/NOTICE'
+       exclude 'META-INF/LICENSE'
+   }
+
+   configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.1.0'
+    }
+  }
+}
