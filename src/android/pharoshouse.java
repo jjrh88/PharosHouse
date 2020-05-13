@@ -21,6 +21,10 @@ import okhttp3.ResponseBody;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.PluginResult.Status;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,8 +33,9 @@ import org.json.JSONObject;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class PharosHouse extends CordovaPlugin {
+public class pharoshouse extends CordovaPlugin {
 
+    private static final String TAG = "PharosHouse";
     private ProgressDialog progress;
 
     Button btn_enrolar;
@@ -43,19 +48,31 @@ public class PharosHouse extends CordovaPlugin {
     Boolean verification;
 
 
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        Log.d(TAG, "Inicializando MiPlugin");
+    }
+
+      
+   
+
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("capturar")) {
-            this.capturar(args, callbackContext);
-            return true;
+        System.out.println("ejecutando");
+        if(action.equals("capturar")) {
+          // An example of returning data back to the web layer
+          this.capturar(args,null, null);
+          
         }
-        return false;
-    }
+        return true;
+      }
 
     private void capturar(JSONArray args, CallbackContext callbackContext) {
         if (args != null) {
         try
         {
+            System.out.println("---", args);
+
             string documentType = args.getJSONObject(0).getString("documentType");
             int productId = Integer.parseInt(args.getJSONObject(0).getString("productId"));
             boolean showLevelerUI = args.getJSONObject(0).getString("showLevelerUI");

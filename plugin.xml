@@ -2,16 +2,17 @@
 <plugin id="cordova-plugin-pharosHouse" version="1.0.0"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>PharosHouse</name>
-    <js-module name="PharosHouse" src="www/PharosHouse.js">
-        <clobbers target="cordova.plugins.PharosHouse" />
+    <name>pharoshouse</name>
+    <js-module name="pharoshouse" src="www/pharosouse.js">
+        <clobbers target="cordova.plugins.pharosHouse" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="PharosHouse">
+            <feature name="pharosHouse">
                 <param name="android-package" value="com.cordova.plugin.pharoshouse" />
             </feature>
         </config-file>
+        <config-file parent="application" target="AndroidManifest.xml">
 
         <framework src="src/android/pharoshouse.gradle" custom="true" type="gradleReference"/>
         <resource-file src="src/android/acuantMobileSDK.aar" target="libs/acuantMobileSDK.aar"/>
