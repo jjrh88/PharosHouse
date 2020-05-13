@@ -12,7 +12,7 @@
                 <param name="android-package" value="com.cordova.plugin.pharoshouse" />
             </feature>
         </config-file>
-        <config-file parent="application" target="AndroidManifest.xml">
+        
 
         <framework src="src/android/pharoshouse.gradle" custom="true" type="gradleReference"/>
         <resource-file src="src/android/acuantMobileSDK.aar" target="libs/acuantMobileSDK.aar"/>
